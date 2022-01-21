@@ -1,0 +1,140 @@
+<html>
+    <style>
+        #img1{
+            float: right;
+            width: 450px;
+            padding:10px;
+            margin: 50px;
+            height: auto;
+        }
+        button{
+            font-family: sans-serif;
+            color: rgb(95, 90, 90);
+            text-align: center;
+            height: 50px;
+            width: 400px;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .heading{
+            text-align: center;
+            color: rgb(236, 120, 42);
+        }
+        .text{
+            color: rgb(41, 41, 129);
+            text-align: center;
+        }
+        #subbooking{
+            text-align: center;
+            font-family: monospace;
+        }
+        .finfo{
+            font-family: sans-serif;
+            color: rgb(41, 41, 129);
+        }
+    </style>
+    <body>
+        <button onclick="show('ABOUT')">HOME</button>
+        <button onclick="show('BOOKING')">BOOK YOUR VACCINE</button>
+        <button onclick="show('CHECKING')">BOOKED INFORMATION</button>
+    </body>
+    <body>
+        <div id="ABOUT">
+          <div>
+            <h1 class="heading">-BE VACCINATED AND BE SAFE-</h1>
+            <h2 class="text"> COVID-19 vaccines were developed using science that has been around for decades.
+                 COVID-19 vaccines are not experimental. They went through all the required stages of clinical trials.
+                 Extensive testing and monitoring have shown that these vaccines are safe and effective.COVID 19-vaccines
+                 are effective. They can keep you from getting and spreading the virus that causes COVID-19.Get vaccinated
+                 regardless of whether you already had COVID-19. Studies have shown that vaccination provides a strong boost
+                 in protection in people who have recovered from COVID-19.</h2>
+        </div>
+            <div id="page1">
+                <h1 class="heading">-HOW CAN YOU KNOW YOU ARE INFECTED-</h1>
+                <h3 class="heading">:THESE ARE SOME OF THE SYMPTOMS OF COVID-19:</h3>
+                <h2 class="text">IF YOU ARE FACING ANY OF THESE SYMPTOMS PLEASE RETURN HOME ASAP. WHILE GOING AVOID CONTACT WITH DIFFERENT PEOPLE.
+                    AS SOON AS YOU REACH HOME PLEASE TAKE A RTPCR TEST TO CONFIRM IF YOU TESTED COVID POSITIVE OR NEGATIVE. WEAR A DOUBLE
+                    MASK WHILE GOING OUTSIDE TO AVOID SPREADING THIS VIRUS.STAY SAFE.</h2>
+                    <br>
+                <img id="img1" src="https://i2.wp.com/www.nfid.org/wp-content/uploads/2019/08/whyivax2-getvaccinated-e1573923970210.png?ssl=1">
+                <h2 class="text">*MOST COMMON SYMPTOMS:*
+                    <br>
+                    =>fever
+                    <br>
+                    =>dry cough
+                    <br>
+                    =>tiredness
+                    <br><br>
+                    *LESS COMMON SYMPTOMS:*
+                    <br>
+                    =>aches and pains
+                    <br>
+                    =>sore throat
+                    <br>
+                    =>diarrhoea
+                    <br>
+                    =>conjunctivitis
+                    <br>
+                    =>headache
+                    <br>
+                    =>loss of taste or smell
+                    <br>
+                    =>a rash on skin, or discolouration of fingers or toes
+                    <br><br>
+                    *SERIOUS SYMPTOMS:*<br>
+                    =>difficulty breathing or shortness of breath
+                    <br>
+                    =>chest pain or pressure
+                    <br>
+                    =>loss of speech or movement</h2>
+             </div>
+        </div>
+        <br><br><br>
+        <div id="BOOKING">
+            <div>
+               <h1 class="text">ENTER YOUR PERSONAL INFORMATION AS ASKED BELOW TO BOOK YOUR VACCINE. AFTER ENTERING THE INFORMATION YOU CAN RECHECK IT ON
+                THE NEXT PAGE JUST TO CONFIRM. IF THE INFORMATION IS INCORRECT PLEASE CANCEL THE BOOKING AND REFILL IT.</h1>
+            </div>
+            <br><br>
+            <div id="subbooking">
+                <h3><label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="name1"><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value="name2"><br><br>
+                <label for="Age">Age:</label><br>
+                <input type="text" id="Age" name="Age" value="name1"><br><br>
+                <label for="vaccine">Which vaccine do you want covid shield or covaccine:</label><br>
+                <input type="text" id="vaccine" name="vaccine" value="name2"><br><br>
+                <button onclick="submit()" id="submit">SUBMIT</button></h3>
+            </div>    
+        </div>
+        <div id="CHECKING">
+            <div class="heading">
+            <h1>-YOU CAN CHECK YOUR BOOKED INFORMATION HERE-</h1>
+            <p class="finfo" id="finfo1"></p> 
+            <p class="finfo" id="finfo2"></p>
+            <p class="finfo" id="finfo3"></p>
+            <p class="finfo" id="finfo4"></p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function show(page){
+            document.getElementById('ABOUT').style.display="none"
+            document.getElementById('BOOKING').style.display="none"
+            document.getElementById('CHECKING').style.display="none"
+            document.getElementById(page).style.display="block"            
+        }
+        function submit(){
+            var name= document.getElementById('fname').value
+            document.getElementById('finfo1').innerHTML="First name - "+ name
+            var name= document.getElementById('lname').value
+            document.getElementById('finfo2').innerHTML="Last name - "+ name
+            var name= document.getElementById('Age').value
+            document.getElementById('finfo3').innerHTML="Age - "+ name
+            var name= document.getElementById('vaccine').value
+            document.getElementById('finfo4').innerHTML="Vaccine Name - "+ name
+        }
+    </script>
+</html>
